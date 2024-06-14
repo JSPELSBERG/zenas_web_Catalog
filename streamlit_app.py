@@ -16,6 +16,7 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT COLOR_OR_STYLE FROM CATALOG_FOR_WEBSITE")
 my_catalog = my_cur.fetchall()
 
+df = pandas.DataFrame(my_catalog)
 
 my_data_row = my_cur.fetchone()
 st.text("Hello from Snowflake:")
