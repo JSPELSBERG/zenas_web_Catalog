@@ -15,10 +15,12 @@ my_cur.execute("SELECT COLOR_OR_STYLE FROM CATALOG_FOR_WEBSITE")
 my_catalog = my_cur.fetchall()
 
 df = pd.DataFrame(my_catalog)
-st.write(df)
+#st.write(df)
 color_list = df[0].values.tolist()
 
 option = st.selectbox('Pick a sweatsuite color or style:', list(color_list))
+
+product_caption = 'Our warm, comforable, ' + option + 'sweatsuit!'
 
 my_data_row = my_cur.fetchone()
 st.text("Hello from Snowflake:")
