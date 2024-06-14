@@ -20,8 +20,10 @@ st.write(color_list)
 coloroption = st.selectbox('Pick a sweatsuite color or style:', list(color_list))
 #sizeoption = st.selectbox('Pick a sweatsuite color or style:', list(size_list))
 
+st.write(coloroption)
 product_caption = 'Our warm, comforable, ' + coloroption + 'sweatsuit!'
 st.write(product_caption)
+
 
 #my_data_row = my_cur.fetchone()
 
