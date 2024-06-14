@@ -4,10 +4,8 @@ import pandas as pd
 from snowflake.snowpark.functions import col
 
 # Write directly to the app
-st.title("Zenas's Amazing Athleisure Catalog")
-st.write(
-    """Pick a sweatsuite color or style:"""
-)
+st.title("Zenas's Amazing Athleisure Catalog :Pullover:")
+
 
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
@@ -18,6 +16,9 @@ my_catalog = my_cur.fetchall()
 
 df = pd.DataFrame(my_catalog)
 st.write(df)
+color_list = df[0].values.tolist()
+
+option = st.selectbox('Pick a sweatsuite color or style:', list(color_list))
 
 my_data_row = my_cur.fetchone()
 st.text("Hello from Snowflake:")
