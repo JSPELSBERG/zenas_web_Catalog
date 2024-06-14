@@ -9,7 +9,7 @@ st.title("Zenas's Amazing Athleisure Catalog")
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
-my_cur.execute("SELECT COLOR_OR_STYLE FROM CATALOG_FOR_WEBSITE")
+my_cur.execute("SELECT COLOR_OR_STYLE,  FROM CATALOG_FOR_WEBSITE")
 my_catalog = my_cur.fetchall()
 
 df = pd.DataFrame(my_catalog)
@@ -17,9 +17,10 @@ df = pd.DataFrame(my_catalog)
 color_list = df[0].values.tolist()
 print(color_list)
 
-option = st.selectbox('Pick a sweatsuite color or style:', list(color_list))
+coloroption = st.selectbox('Pick a sweatsuite color or style:', list(color_list))
+#sizeoption = st.selectbox('Pick a sweatsuite color or style:', list(size_list))
 
-product_caption = 'Our warm, comforable, ' + option + 'sweatsuit!'
+product_caption = 'Our warm, comforable, ' + coloroption + 'sweatsuit!'
 st.write(product_caption)
 
 #my_data_row = my_cur.fetchone()
