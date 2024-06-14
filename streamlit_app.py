@@ -14,7 +14,7 @@ my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
 my_cur.execute("SELECT COLOR_OR_STYLE FROM CATALOG_FOR_WEBSITE")
-my_catalog = my_cur.fethall()
+my_catalog = my_cur.fetchall()
 
 
 my_data_row = my_cur.fetchone()
