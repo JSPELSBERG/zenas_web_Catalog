@@ -15,6 +15,7 @@ my_catalog = my_cur.fetchall()
 df = pd.DataFrame(my_catalog)
 #st.write(df)
 color_list = df[0].values.tolist()
+print(color_list)
 
 option = st.selectbox('Pick a sweatsuite color or style:', list(color_list))
 
