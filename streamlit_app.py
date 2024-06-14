@@ -13,9 +13,9 @@ my_cur.execute("SELECT COLOR_OR_STYLE,  FROM CATALOG_FOR_WEBSITE")
 my_catalog = my_cur.fetchall()
 
 df = pd.DataFrame(my_catalog)
-st.write(df[0].values)
+#st.write(df[0].values)
 color_list = df[0].values.tolist()
-print(color_list)
+st.write(color_list)
 
 coloroption = st.selectbox('Pick a sweatsuite color or style:', list(color_list))
 #sizeoption = st.selectbox('Pick a sweatsuite color or style:', list(size_list))
