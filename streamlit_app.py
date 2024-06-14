@@ -13,7 +13,7 @@ my_cur.execute("SELECT COLOR_OR_STYLE,  FROM CATALOG_FOR_WEBSITE")
 my_catalog = my_cur.fetchall()
 
 df = pd.DataFrame(my_catalog)
-st.write(df[0])
+st.write(df[0].values)
 color_list = df[0].values.tolist()
 print(color_list)
 
