@@ -1,7 +1,7 @@
 import streamlit as st
 import snowflake.connector
 import pandas as pd
-from snowflake.snowpark.functions import col
+#from snowflake.snowpark.functions import col
 
 # Write directly to the app
 st.title("Zenas's Amazing Athleisure Catalog")
